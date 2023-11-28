@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.8.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  "initialViewState": {
+    "bearing": 0,
+    "latitude": 45.5152,
+    "longitude": -122.6784,
+    "pitch": 0,
+    "zoom": 10
+  },
+  "layers": [
+    {
+      "@@type": "ScatterplotLayer",
+      "data": [
+        {
+          "count": 1,
+          "counts_radius": 1.0,
+          "latitude": 45.4909643,
+          "longitude": -122.8035899,
+          "zipcode": "97005"
+        },
+        {
+          "count": 1,
+          "counts_radius": 1.0,
+          "latitude": 45.220824,
+          "longitude": -122.6682804,
+          "zipcode": "97013"
+        },
+        {
+          "count": 1,
+          "counts_radius": 1.0,
+          "latitude": 45.413524,
+          "longitude": -122.5367584,
+          "zipcode": "97015"
+        },
+        {
+          "count": 1,
+          "counts_radius": 1.0,
+          "latitude": 45.3856499,
+          "longitude": -122.5928265,
+          "zipcode": "97027"
+        },
+        {
+          "count": 1,
+          "counts_radius": 1.0,
+          "latitude": 45.5092296,
+          "longitude": -122.4335647,
+          "zipcode": "97030"
+        },
+        {
+          "count": 1,
+          "counts_radius": 1.0,
+          "latitude": 45.2978342,
+          "longitude": -122.0543644,
+          "zipcode": "97067"
+        },
+        {
+          "count": 2,
+          "counts_radius": 1.4142135623730951,
+          "latitude": 45.4451754,
+          "longitude": -122.5280773,
+          "zipcode": "97086"
+        },
+        {
+          "count": 2,
+          "counts_radius": 1.4142135623730951,
+          "latitude": 45.5078563,
+          "longitude": -122.6907944,
+          "zipcode": "97201"
+        },
+        {
+          "count": 40,
+          "counts_radius": 6.324555320336759,
+          "latitude": 45.4827408,
+          "longitude": -122.6444414,
+          "zipcode": "97202"
+        },
+        {
+          "count": 6,
+          "counts_radius": 2.449489742783178,
+          "latitude": 45.6035493,
+          "longitude": -122.7379046,
+          "zipcode": "97203"
+        },
+        {
+          "count": 119,
+          "counts_radius": 10.908712114635714,
+          "latitude": 45.4824328,
+          "longitude": -122.5986048,
+          "zipcode": "97206"
+        },
+        {
+          "count": 1,
+          "counts_radius": 1.0,
+          "latitude": 45.528666,
+          "longitude": -122.678981,
+          "zipcode": "97208"
+        },
+        {
+          "count": 1,
+          "counts_radius": 1.0,
+          "latitude": 45.5311271,
+          "longitude": -122.6839406,
+          "zipcode": "97209"
+        },
+        {
+          "count": 8,
+          "counts_radius": 2.8284271247461903,
+          "latitude": 45.5811323,
+          "longitude": -122.6373053,
+          "zipcode": "97211"
+        },
+        {
+          "count": 2,
+          "counts_radius": 1.4142135623730951,
+          "latitude": 45.5442362,
+          "longitude": -122.6434684,
+          "zipcode": "97212"
+        },
+        {
+          "count": 15,
+          "counts_radius": 3.872983346207417,
+          "latitude": 45.5381938,
+          "longitude": -122.6000136,
+          "zipcode": "97213"
+        },
+        {
+          "count": 13,
+          "counts_radius": 3.605551275463989,
+          "latitude": 45.5146717,
+          "longitude": -122.6430144,
+          "zipcode": "97214"
+        },
+        {
+          "count": 13,
+          "counts_radius": 3.605551275463989,
+          "latitude": 45.5151213,
+          "longitude": -122.6006274,
+          "zipcode": "97215"
+        },
+        {
+          "count": 9,
+          "counts_radius": 3.0,
+          "latitude": 45.5138872,
+          "longitude": -122.5584031,
+          "zipcode": "97216"
+        },
+        {
+          "count": 5,
+          "counts_radius": 2.23606797749979,
+          "latitude": 45.6018146,
+          "longitude": -122.7007985,
+          "zipcode": "97217"
+        },
+        {
+          "count": 2,
+          "counts_radius": 1.4142135623730951,
+          "latitude": 45.5762906,
+          "longitude": -122.600896,
+          "zipcode": "97218"
+        },
+        {
+          "count": 4,
+          "counts_radius": 2.0,
+          "latitude": 45.4542311,
+          "longitude": -122.698526,
+          "zipcode": "97219"
+        },
+        {
+          "count": 15,
+          "counts_radius": 3.872983346207417,
+          "latitude": 45.550024,
+          "longitude": -122.5592971,
+          "zipcode": "97220"
+        },
+        {
+          "count": 1,
+          "counts_radius": 1.0,
+          "latitude": 45.440945,
+          "longitude": -122.6180766,
+          "zipcode": "97222"
+        },
+        {
+          "count": 1,
+          "counts_radius": 1.0,
+          "latitude": 45.4402905,
+          "longitude": -122.7766046,
+          "zipcode": "97223"
+        },
+        {
+          "count": 2,
+          "counts_radius": 1.4142135623730951,
+          "latitude": 45.5289286,
+          "longitude": -122.6439272,
+          "zipcode": "97232"
+        },
+        {
+          "count": 5,
+          "counts_radius": 2.23606797749979,
+          "latitude": 45.5151181,
+          "longitude": -122.5032593,
+          "zipcode": "97233"
+        },
+        {
+          "count": 2,
+          "counts_radius": 1.4142135623730951,
+          "latitude": 45.4828924,
+          "longitude": -122.5097846,
+          "zipcode": "97236"
+        },
+        {
+          "count": 2,
+          "counts_radius": 1.4142135623730951,
+          "latitude": 45.4924427,
+          "longitude": -122.6924568,
+          "zipcode": "97239"
+        },
+        {
+          "count": 48,
+          "counts_radius": 6.928203230275509,
+          "latitude": 45.4829568,
+          "longitude": -122.5582085,
+          "zipcode": "97266"
+        },
+        {
+          "count": 1,
+          "counts_radius": 1.0,
+          "latitude": 45.408427,
+          "longitude": -122.612867,
+          "zipcode": "97267"
+        }
+      ],
+      "filled": true,
+      "getFillColor": [
+        28,
+        187,
+        37
+      ],
+      "getLineColor": [
+        0,
+        0,
+        0
+      ],
+      "getPosition": "@@=[longitude, latitude]",
+      "getRadius": "@@=count",
+      "id": "56a2ed3c-abe4-4632-83a9-da965e6678d9",
+      "lineWidthMinPixels": 1,
+      "opacity": 0.8,
+      "pickable": true,
+      "radiusMaxPixels": 100,
+      "radiusMinPixels": 3,
+      "radiusScale": 20,
+      "stroked": true
+    }
+  ],
+  "mapProvider": "carto",
+  "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+  "views": [
+    {
+      "@@type": "MapView",
+      "controller": true
+    }
+  ]
+};
+    const tooltip = true;
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>
