@@ -5,7 +5,9 @@ Final supervised classification model was an XGBoost with hyperparameters: {'lea
 
 This was it's accuracy report:
 Accuracy: 0.91875
+
 Classification Report:
+
               precision    recall  f1-score   support
 
            0       0.58      0.25      0.35        28
